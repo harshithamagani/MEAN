@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <script>
+// var Ninja = function(name) {
+//   var speed = 3; // just to show that it is difficult to see this private var
+//   var strength = 3; 
+//   this.name = name; // but you can see the name!
+//   this.health =100
+//   this.sayName = function() {
+//     console.log( "My ninja name is "+this.name+"!");
+//   };
+//   this.read_speed = function(){
+//     return speed;
+//   };
+//   this.read_strength = function(){
+//     return strength;
+//   };
+      
+//   this.showStats = function(){
+//     console.log("This should show the Ninja's "+this.name+", Speed:"+speed+", Strength:"+strength+", and Health: "+this.health+".")
+//   };
+//   this.drinkSake = function(){
+//     this.health += 10
+//       return this
+//   };
+// }
+
+class Ninja {
+    constructor(name) {
+        this.name = name;
+        this.health = 100;
+        var _strength =3
+        var _speed = 3
+        this.setStrength = function(strength) { _strength = strength; }
+        this.getStrength = function() { return _strength; }
+        this.setSpeed = function (speed) { _speed = speed; }
+    }
+}
+var ninja1 = new Ninja("Hyabusa");
+console.log(ninja1.getStrength())
+// -> "My ninja name is Hyabusa!"
+//ninja1.showStats();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

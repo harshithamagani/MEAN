@@ -1,0 +1,18 @@
+<form>
+    <!-- <p *ngIf="myobj.title.length < 3 && myobj.title.length > 0">Your title is too short</p> -->
+    <p *ngIf="titleMessage">Your title is too short</p>
+
+    <input type="text" name="myobj.title" [(ngModel)] = "myobj.title">
+    <input type="text" name="myobj.url" [(ngModel)] = "myobj.url">
+    <input type="text" name="myobj.reviews[0].comment" [(ngModel)] = "myobj.reviews[0].comment">
+    <select name="myobj.reviews[0].rating" [(ngModel)] = "myobj.reviews[0].rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <!-- <button (click)="submitForm()" [disabled]="myobj.title.length < 3">Submit</button> -->
+    <button (click)="submitForm()" >Submit</button>
+
+</form>

@@ -1,0 +1,14 @@
+<button [routerLink] ="['/']" >Go Back</button>
+
+<form>
+        <!-- <p *ngIf="myobj.title.length < 3 && myobj.title.length > 0">Your title is too short</p> -->
+        <p *ngIf="titleMessage">Your title is too short</p>
+    
+        <input type="text" name="myobj.title" [(ngModel)] = "myobj.title">
+        <input type="text" name="myobj.url" [(ngModel)] = "myobj.url">
+        
+        <!-- <button (click)="submitForm()" [disabled]="myobj.title.length < 3">Submit</button> -->
+        <button (click)="submitForm()" >Submit</button>
+    
+    </form>
+    

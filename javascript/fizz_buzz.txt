@@ -1,0 +1,28 @@
+
+function fizzbuzz(num){
+  arr=[]
+  str = ""
+   if (typeof num == "number"){
+     for (var i=1;i<=15;i++)
+       {
+         if(i%3 !== 0 && i%5 ===0){
+           str=str.concat("Buzz",",")
+         }
+          else if(i%3 === 0 && i%5 !==0){
+            str=str.concat("Fizz",",")
+          }
+         
+         else if(i%3 === 0 && i%5 ===0){
+           str=str.concat("and FizzBuzz")
+         }
+         else{
+           str=str.concat(i,",")
+         }
+       }
+   }
+  else{
+    console.log("Parameter must be a positive number")
+  }
+  return str
+ }
+console.log(fizzbuzz(15))

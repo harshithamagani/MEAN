@@ -1,0 +1,8 @@
+<h1>{{myobj.title}}</h1>
+<img src="{{myobj.url}}" alt="">
+<p>Average Rating: {{myobj.average}}</p>
+<div *ngFor="let x of myobj.reviews">
+    <p>{{x.comment}}</p>
+    <p>{{x.rating}}</p>
+</div>
+<button [routerLink]="['/add/review',myobj._id]">Add a Review!</button>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deck Of Cards</title>
+    <script>
+        var suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
+        var string = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"]
+        class Card {
+            constructor(suit, word, num_val) {
+                this.suit = suit
+                this.word = word
+                this.num_val = num_val
+            }
+            show_card() {
+                console.log("Suit:" + this.suit + "Word:" + this.word + "Numerical Value:" + this.num_val)
+            }
+        }
+
+        class Deck {
+            constructor() {
+                this.deck = []
+                for (var i = 0; i < suits.length; i++) {
+                    for (var j = 0; j < string.length; j++) {
+                        var newCard = new Card(suits[i], string[j], j + 1)
+                        this.deck.push(newCard)
+                    }
+                }
+            }
+
+            deal() {
+                return this.deck.pop();
+            }
+
+            shuffle() {
+                const { deck } = this;
+                let m = deck.length, i;
+
+                while (m) {
+                    i = Math.floor(Math.random() * m--);
+
+                    [deck[m], deck[i]] = [deck[i], deck[m]];
+                }
+
+                return this;
+            }
+
+            reset(){
+                this.deck = []
+                for (var i = 0; i < suits.length; i++) {
+                    for (var j = 0; j < string.length; j++) {
+                        var newCard = new Card(suits[i], string[j], j + 1)
+                        this.deck.push(newCard)
+                    }
+                }
+                return this.deck
+            }
+        }
+
+        class Player{
+            constructor(name){
+                this.name = name
+                this.hand = []
+            }
+
+            draw(deck){
+                this.hand.push(deck.deal())
+            }
+
+            discard_card(i){
+                this.hand.splice(i)
+            }
+        }
+        deck1 = new Deck()
+        console.log(deck1)
+        play1 = new Player("Harshi")
+        play2 =  new Player ("Ooha")
+
+        play1.draw(deck1)
+        play1.draw(deck1)
+        play1.draw(deck1)
+
+        play1.discard_card(2)
+        console.log(play1)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

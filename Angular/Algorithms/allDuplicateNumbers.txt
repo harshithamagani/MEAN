@@ -1,0 +1,21 @@
+function findAll(arr){
+  dict = {}
+  for(var i=0;i<arr.length;i++){
+    if (arr[i] in dict){
+      dict[arr[i]] += 1
+    }
+    else{
+      dict[arr[i]] = 1
+    }
+  }
+  dummyArr =[]
+  for (var key in dict) {
+    if(dict[key] > 1){
+      dummyArr.push(key)
+    }
+  }
+  return dummyArr;
+}
+
+
+console.log(findAll([2,2,4,5,6,1,5,4]))

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Active orders</title>
+	<meta name="description" content="Page about active orders">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="debug.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		.card{
+			border-radius: 1.25rem;
+			background-color: #ADD8E6;
+		}
+		.card-pad{
+			padding: 10px 0 0 0;
+		}
+		.button_status{
+			background-color: #007bff;
+			border-radius: 8px;
+			color: white;
+		}
+		.quantity{
+			margin-left: 48px;
+		}
+		.drop_down{
+			background-color: white;
+			height: 30px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="container-fluid">
+		<div class="container-fluid">
+			<div class="row flex-row flex-nowrap display_type">
+				<div class="col-3">
+					<div id="display_type" class="card card-block">
+						<div class="card-body">
+							<h5 class="card-title">Order Number: {Order Id}</h5>
+							<h6 class="card-subtitle mb-2">Order Status: {Order Status}</h6>
+							<h6 class="card-subtitle mb-2">Table Number: {Table ID}</h6>
+							<h6 class="card-subtitle mb-2 card-pad">Items:</h6>
+							<p class="card-text">
+									<div class="row">
+											<div class="col"><span>Item</span></div>
+											<div class="col"><span>Quantity</span></div>
+										</div>
+								<div class="row">
+									<div class="col">Food 1</div>
+									<div class="col quantity">5</div>
+								</div>
+								<div class="row">
+										<div class="col">Food 2</div>
+										<div class="col quantity">5</div>
+									</div>
+							</p>
+							<form action="#" method="POST">
+									<select class="drop_down" name="order_status">
+										<option value="default">Select Status</option>
+										<option value="process">In Progress</option>
+										<option value="ready">Ready</option>
+										<option value="waiting">Awaiting</option>
+									</select>
+									<input type="submit" class="button_status" name="submit" value="Update Status">
+								</form>
+							<a href="#" class="card-link">Edit Order</a>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card card-block">
+						<h5 class="card-title">Order Number: {Order Id}</h5>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card card-block">
+							<h5 class="card-title">Order Number: {Order Id}</h5>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card card-block">
+						<h5 class="card-title">Order Number: {Order Id}</h5>
+					</div>
+				</div>
+				...
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

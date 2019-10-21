@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= cat. name%></title>
+    <style>
+    #wrapper{
+        margin: 0 auto;
+        width: 900px;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Details Page of <%= cat.name%></h1>
+    <img src="/cat1.jpeg" alt="Cat image">
+    <h2>Favorite food:<%= cat.food %></h2>
+    <h2>Age:<%= cat.age %></h2>
+    <h2> Sleeping spots:</h2>
+    <% for(spot of cat.sleep) {%>
+        <h3><%= spot%></h3>
+    <% } %>
+</div>
+</body>
+</html>

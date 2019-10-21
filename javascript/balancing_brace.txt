@@ -1,0 +1,35 @@
+function balance_brace(str){
+  arr=[]
+  var dict = {
+    "{" : "}",
+    "[" : "]",
+    "(" : ")"
+  };
+  for (var i=0;i<str.length;i++){
+    if (str.charAt(i) in dict){
+      arr.push(dict[str.charAt(i)])
+      console.log("pushing",str.charAt(i))
+    }
+    else{
+      console.log(arr)
+      if (arr[arr.length-1] == str.charAt(i)){
+        var removed = arr.pop()
+        console.log("removed",removed)
+      }
+      else if(arr[arr.length-1] !== str.charAt(i)){
+        console.log("arr",arr)
+        console.log("checking",arr[arr.length-1])
+        console.log("checking2",str.charAt(i))
+        return false
+      }
+    }
+  }
+  if (arr === undefined || arr.length === 0)
+    return true
+}
+
+console.log(balance_brace("{[()]}[]"))
+
+
+
+

@@ -1,0 +1,23 @@
+<button [routerLink] ="['/new']" >Make New Movie</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>url</th>
+            <th>Average Rating</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let x of myobjects">
+                <td><a [routerLink]="['/show', x._id]">{{x.title}}</a></td>
+                <td><img src="{{x.url}}" alt=""></td>
+                <td>{{x.average}}</td>
+                <td>
+                    <button [routerLink]="['/edit', x._id]">Edit</button> |
+                    <button (click)="deleteObj(x._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+</table>

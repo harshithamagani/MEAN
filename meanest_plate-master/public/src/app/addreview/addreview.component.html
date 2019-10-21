@@ -1,0 +1,12 @@
+<form>
+        <input type="text" name="reviewobj.comment" [(ngModel)] = "reviewobj.comment">
+        <select name="reviewobj.rating" [(ngModel)] = "reviewobj.rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <!-- <button (click)="submitForm()" [disabled]="myobj.title.length < 3">Submit</button> -->
+        <button (click)="submitForm()" >Submit</button>
+</form>

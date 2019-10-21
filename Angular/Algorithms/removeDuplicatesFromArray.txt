@@ -1,0 +1,27 @@
+function removeDuplicatesFromArray(arr){
+  dict = {}
+  for(var i=0;i<arr.length;i++){
+    if (arr[i] in dict){
+      if(arr[i] == arr[arr.length-1]){
+        arr.pop()
+        i--;
+      }
+      else{
+        temp = arr[arr.length-1]
+        arr[arr.length-1] = arr[i];
+        arr[i] = temp;
+        arr.pop();
+        i--;
+      }
+    }
+    else{
+      dict[arr[i]] = 1
+    }  
+  }
+  return arr;
+}
+
+
+console.log(removeDuplicatesFromArray([2,2,4,5,6,1,5,4]))
+
+

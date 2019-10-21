@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote Dashboard</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Here are the awesome Quotes</h1>
+        <% for(var quote of quotes){ %>
+            <h2><%= quote.name %> | <%= quote.quote %> | <%= quote.createdAt %> | <%= quote.updatedAt %></h2>
+        <% } %>
+    </div>
+</body>
+</html>

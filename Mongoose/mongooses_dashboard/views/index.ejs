@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomePage</title>
+    <style>
+    .content{
+        display: inline-block;
+        border: solid black 2px;
+        padding: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Hello</h1>
+        <a href="/mongooses/new">Create new animal</a> <br>
+
+        <% for(var mongoose of mongooses){ %>
+            <div class="content">
+             <p>Name : <%= mongoose.name %></p>
+             <p>Age: <%= mongoose.age %></p>
+             <a href="/mongooses/<%= mongoose._id %>">View Details</a>
+             <a href="/mongooses/edit/<%= mongoose._id %>">Edit Details</a>
+             <a href="/mongooses/destroy/<%= mongoose._id %>">Remove Mongoose</a>
+            </div>
+            <% } %>
+    </div>
+</body>
+</html>

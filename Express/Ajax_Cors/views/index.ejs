@@ -1,0 +1,91 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+<script>
+    $(document).ready(function () {
+        $('#peopleBtn').click(function () {
+            var data_obj;
+            $.get('/people', function (data) {
+                var str = "";
+                // log the data to be sure we have it before we dive into manipulating the DOM
+                data_obj = data.results
+                if (data_obj.length != null) {
+                for (var i = 0; i < data_obj.length; i++) {
+                    console.log(data_obj[i].name);
+                    str = str.concat(data_obj[i].name).concat('<br>')
+                    $("p").html(str);
+                }
+            }
+                console.log("got the data", data);
+            }, 'json');
+        });
+        $('#plantsBtn').click(function () {
+            var data_obj;
+            var str = "";
+            $.get('/planet', function (data) {
+                data_obj = data.results
+                if (data_obj.length != null) {
+                for (var i = 0; i < data_obj.length; i++) {
+                    console.log(data_obj[i].name);
+                    str = str.concat(data_obj[i].name).concat('<br>')
+                    $("p").html(str);
+                }
+            }
+                //console.log(data);
+            },"json");
+        });
+        $('#plantNextBtn').click(function () {
+            var data_obj;
+            var str = "";
+            $.get('/next', function (data) {
+                data_obj = data.results
+                if (data_obj.length != null) {
+                for (var i = 0; i < data_obj.length; i++) {
+                    console.log(data_obj[i].name);
+                    str = str.concat(data_obj[i].name).concat('<br>')
+                    $("p").html(str);
+                }
+            }
+            },"json");
+        });
+        $('#plantPrevBtn').click(function () {
+            var data_obj;
+            var str = "";
+            $.get('/previous', function (data) {
+                data_obj = data.results
+                if (data_obj.length != null) {
+                for (var i = 0; i < data_obj.length; i++) {
+                    console.log(data_obj[i].name);
+                    str = str.concat(data_obj[i].name).concat('<br>')
+                    $("p").html(str);
+                }
+            }
+            },"json");
+        });
+
+        $('#all_planets').click(function () {
+            for(var j=1;j<6;j++){
+            $.get('/planets/j', function (data) {
+                data_obj = data.results
+                if (data_obj.length != null) {
+                for (var i = 0; i < data_obj.length; i++) {
+                    console.log(data_obj[i].name);
+                    str = str.concat(data_obj[i].name).concat('<br>')
+                }
+            }        
+            },"json");
+        }
+        });
+    });
+
+</script>
+
+<body>
+    <div id="wrapper">
+        <p id="display_name"></p>
+    </div>
+    <button id="peopleBtn">People</button>
+    <button id="plantsBtn">Planet</button>
+    <button id="plantNextBtn">Next 10</button>
+    <button id="plantPrevBtn">Prev 10</button>
+    <button id="all_planets">All Planets</button>
+</body>

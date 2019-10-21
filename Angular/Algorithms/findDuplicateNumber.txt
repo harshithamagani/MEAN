@@ -1,0 +1,35 @@
+//Using javascript object
+
+function findDuplicateNumber(arr){
+  dict = {}
+  for(var i=0;i<arr.length;i++){
+    if(arr[i] in dict){
+      return arr[i];
+    }
+    else{
+      dict[arr[i]] = true
+    }
+       
+  }
+    return false;
+}
+
+
+console.log(findDuplicateNumber([2,3,4,5,6,5]))
+
+//Using to for loops brut force way
+
+function findDuplicateNumber(arr){
+  for(var i=0;i<arr.length;i++){
+    //console.log(arr[i])
+   for(var j=i+1;j<arr.length;j++){
+     //console.log(arr[j])
+     if(arr[i] == arr[j]){
+       return arr[i]
+     }
+   }
+  }
+}
+
+
+console.log(findDuplicateNumber([2,3,4,5,6,5]))

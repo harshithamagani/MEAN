@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add New Mongoose Animal</title>
+    <style>
+    #wrapper{
+        margin: 0 auto
+        
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="/post/new" method="POST">
+        Mongoose Name : <input type="text" name="name" id="name"> <p></p>
+        Age : <input type="text" name="age" id="age"> <p></p>
+        Description : <input type="text"  name="desc" id="desc"> <p></p>
+        <input type="submit" value="Create new">
+        </form>
+    </div>
+</body>
+</html>

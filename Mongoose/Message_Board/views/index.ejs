@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Dashboard</title>
+    <style>
+        #wrapper {
+            margin: 0 auto;
+            /* border: solid black 2px;
+        border-radius: 5px; */
+            padding: 50px
+        }
+
+        #submit {
+            margin-left: 520px;
+            font-size: 1em;
+        }
+
+        #header h1 {
+            text-align: center;
+        }
+        #submit_comment{
+            margin-left: 400px;
+            font-size: 1em;  
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Dojo Messaging Board</h1>
+    </div>
+    <div id="wrapper">
+        <form action="/post/message" method="POST">
+            Name: <input name="name" type="text"><br><br>
+            Message: <br><textarea name="message" placeholder="Write a message" cols="100" rows="5"></textarea><br>
+            <input name="submit" id="submit" value="Post Message" type="submit">
+        </form>
+        <% for(var message of messages){ %>
+        <h3>Name: <%= message.name %></h3>
+        <h3>Message: <%= message.message %></h3>
+        <% for(var comment of message._comments){ %>
+            <p>Name: <%= comment.name %></p>
+            <p>Comment: <%= comment.comment %></p>
+            <% } %>
+        <form action="/post/comment/<%= message._id %>" method="POST">
+            Name: <input name="name" type="text"><br><br>
+            Comment: <br><textarea name="comment" placeholder="Write a comment" cols="80" rows="5"></textarea><br>
+            <input name="submit" id="submit_comment" value="Post Comment" type="submit">
+        </form>
+        <% } %>
+    </div>
+</body>
+
+</html>
